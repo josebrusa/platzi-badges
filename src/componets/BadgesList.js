@@ -1,5 +1,6 @@
 import React from 'react';
 import '../componets/styles/BadgesList.css';
+import twitLogo from './images/gorjeo.png';
 
 class BadgesList extends React.Component {
     render() {
@@ -14,12 +15,12 @@ class BadgesList extends React.Component {
                                     <strong> {badge.firstName} {badge.lastName} </strong>
                                 </div>
                                 <div className = "Twitter__name">
-                                    <div className="Twitter__logo">
-                                        <i className ="bi bi-twitter"></i>@{badge.twitter}
-                                    </div>
+                                    <img src={twitLogo} className ="Twitter__logo" />
+                                    <span>@{badge.twitter}</span>
                                 </div>
-                                <div>{badge.jobTitle}
-                                </div>
+                                        <h6>
+                                            {badge.jobTitle}
+                                        </h6>
                             </div>
                         </li>
                     );
