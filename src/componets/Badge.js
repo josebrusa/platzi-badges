@@ -19,7 +19,7 @@ class Badge extends React.Component {
                 <h3>{this.props.jobTitle}</h3>
 
                 <div>{this.props.email}</div>
-                
+
                 <div>@{this.props.twitter}</div>
 
             </div>

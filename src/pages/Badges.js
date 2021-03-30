@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../componets/NavBar';
 import './styles/Badges.css';
 import confLogo from '../componets/images/badge-header.svg';
 import BadgesList from '../componets/BadgesList';
@@ -40,8 +39,7 @@ class Badges extends React.Component {
 
     render() {
         return (
-            <div>
-                <NavBar />
+            <React.Fragment>
                 <div className="Badges">
                     <div className="Badges__hero">
                         <div className="Badges__container">
@@ -61,7 +59,7 @@ class Badges extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }

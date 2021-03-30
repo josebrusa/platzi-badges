@@ -15,7 +15,7 @@ class BadgesList extends React.Component {
                                     <strong> {badge.firstName} {badge.lastName} </strong>
                                 </div>
                                 <div className = "Twitter__name">
-                                    <img src={twitLogo} className ="Twitter__logo" />
+                                    <img src={twitLogo} className ="Twitter__logo" alt="twitLogo" />
                                     <span>@{badge.twitter}</span>
                                 </div>
                                         <h6>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/BadgeNew.css';
 import header from '../componets/images/badge-header.svg';
-import NavBar from '../componets/NavBar';
 import Badge from '../componets/Badge';
 import BadgeForm from '../componets/BadgeForm';
 
@@ -17,7 +16,7 @@ class BadgeNew extends React.Component {
         twitter: '',
       },
     };
-  
+
     handleChange = e => {
       this.setState({
         form: {
@@ -26,15 +25,14 @@ class BadgeNew extends React.Component {
         },
       });
     };
-  
+
     render() {
       return (
-        <div>
-          <NavBar />
+        <React.Fragment>
           <div className="BadgeNew__hero">
             <img className="img-fluid" src={header} alt="Logo" />
           </div>
-  
+
           <div className="container">
             <div className="row">
               <div className="col">
@@ -47,7 +45,7 @@ class BadgeNew extends React.Component {
                   avatarUrl="https://s.gravatar.com/avatar/4133e43f063b9e916b24835664fa19e4?s=80"
                 />
               </div>
-  
+
               <div className="col-6">
                 <BadgeForm
                   onChange={this.handleChange}
@@ -56,9 +54,10 @@ class BadgeNew extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </React.Fragment>
       );
     }
   }
-  
+
+
   export default BadgeNew;
