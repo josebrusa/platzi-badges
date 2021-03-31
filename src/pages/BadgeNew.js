@@ -3,6 +3,7 @@ import './styles/BadgeNew.css';
 import header from '../componets/images/badge-header.svg';
 import Badge from '../componets/Badge';
 import BadgeForm from '../componets/BadgeForm';
+import PageLoading from '../componets/PageLoading';
 
 
 
@@ -27,11 +28,21 @@ class BadgeNew extends React.Component {
     };
 
     render() {
+
+      if(this.state.loading === true) {
+        return <PageLoading />;
+    }
+
+    if(this.state.error) {
+        return `Error: ${this.state.error.message}`;
+    }
       return (
+
         <React.Fragment>
           <div className="BadgeNew__hero">
             <img className="img-fluid" src={header} alt="Logo" />
           </div>
+
 
           <div className="container">
             <div className="row">

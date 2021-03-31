@@ -4,14 +4,43 @@ body {
     box-sizing: border-box;
 }
 
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 5rem;
+.container__home{
+    display: flex;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    width: 100%;
+    height: 100vh;
+}
+
+.container__wellHome-button{
+    margin: 20px;
+    padding: 10px;
 }
 
 .container__wellHome{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
+
+.title__platziconf {
+    color: ivory;
+    font-size: 120px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+.rocket__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+}
+
+.rocket__conatiner-logo {
+    margin: 0 auto;
+    width: auto;
+    height: 50vh;
+}
+
+
