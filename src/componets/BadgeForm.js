@@ -15,8 +15,7 @@ class BadgeForm extends React.Component {
         render() {
             return (
             <div>
-                <h1>New Attendant</h1>
-                    <form onSubmit={this.props.onSubmit}>
+                <form onSubmit={this.props.onSubmit}>
                 <div className="form-group">
                     <label>Frist Name</label>
                     <input
