@@ -1,9 +1,10 @@
 import React from 'react';
 import './styles/BadgeNew.css';
-import header from '../componets/images/badge-header.svg';
+import header from '../componets/images/platziconf-logo.svg';
 import Badge from '../componets/Badge';
 import BadgeForm from '../componets/BadgeForm';
 import PageLoading from '../componets/PageLoading';
+import api from "../api";
 
 
 
@@ -27,6 +28,18 @@ class BadgeNew extends React.Component {
       });
     };
 
+    handleSubmit = async e => {
+      e.preventDefault();
+      this.setState({ loading: true, error: null})
+
+      try {
+        await api.badges.create(this.state.form)
+        this.setState({ loading: false })
+      } catch (error) {
+        this.setState({ loading: false, error: error })
+      }
+    };
+
     render() {
 
       if(this.state.loading === true) {
@@ -40,7 +53,7 @@ class BadgeNew extends React.Component {
 
         <React.Fragment>
           <div className="BadgeNew__hero">
-            <img className="img-fluid" src={header} alt="Logo" />
+            <img className="BadgeNew__hero-image img-fluid" src={header} alt="Logo" />
           </div>
 
 
@@ -48,11 +61,11 @@ class BadgeNew extends React.Component {
             <div className="row">
               <div className="col">
                 <Badge
-                  firstName={this.state.form.firstName}
-                  lastName={this.state.form.lastName}
-                  twitter={this.state.form.twitter}
-                  email={this.state.form.email}
-                  jobTitle={this.state.form.jobTitle}
+                  firstName={this.state.form.firstName || 'FRIST_NAME'}
+                  lastName={this.state.form.lastName || 'LAST_NAME'}
+                  twitter={this.state.form.twitter || 'twitter'}
+                  email={this.state.form.email || 'EMAIL'}
+                  jobTitle={this.state.form.jobTitle || 'JOB_TITLE'}
                   avatarUrl="https://s.gravatar.com/avatar/4133e43f063b9e916b24835664fa19e4?s=80"
                 />
               </div>
@@ -60,6 +73,7 @@ class BadgeNew extends React.Component {
               <div className="col-6">
                 <BadgeForm
                   onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
                   formValues={this.state.form}
                 />
               </div>
