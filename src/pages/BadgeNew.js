@@ -5,6 +5,7 @@ import Badge from '../componets/Badge';
 import BadgeForm from '../componets/BadgeForm';
 import PageLoading from '../componets/PageLoading';
 import api from "../api";
+import Footer from '../componets/Footer';
 
 
 
@@ -90,6 +91,8 @@ class BadgeNew extends React.Component {
               </div>
             </div>
           </div>
+
+
         </React.Fragment>
       );
     }

@@ -82,7 +82,7 @@ import Gravatar from './Gravatar';
             {this.props.badges.map((badge) => {
                 return (
                 <li key={badge.id}>
-                <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+                <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}`}>
                     <BadgesListItem badge={badge} />
                 </Link>
                 </li>
